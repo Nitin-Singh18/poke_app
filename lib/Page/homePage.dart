@@ -76,25 +76,28 @@ class _HomePageState extends State<HomePage> {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           SizedBox(
-                            height: 100,
-                            width: 100,
-                            child: CachedNetworkImage(
-                              imageUrl: pokemon[index].img,
-                              imageBuilder: (context, imageProvider) =>
-                                  Container(
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    image: imageProvider,
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
+                              height: 100,
+                              width: 100,
+                              child: Image.network(
+                                pokemon[index].img,
+                              )
+                              // CachedNetworkImage(
+                              //   imageUrl: pokemon[index].img,
+                              //   imageBuilder: (context, imageProvider) =>
+                              //       Container(
+                              //     decoration: BoxDecoration(
+                              //       image: DecorationImage(
+                              //         image: imageProvider,
+                              //         fit: BoxFit.cover,
+                              //       ),
+                              //     ),
+                              //   ),
+                              //   placeholder: (context, url) =>
+                              //       CircularProgressIndicator(),
+                              //   errorWidget: (context, url, error) =>
+                              //       Icon(Icons.error),
+                              // ),
                               ),
-                              placeholder: (context, url) =>
-                                  CircularProgressIndicator(),
-                              errorWidget: (context, url, error) =>
-                                  Icon(Icons.error),
-                            ),
-                          ),
                           Text(
                             pokemon[index].name,
                             style: TextStyle(
